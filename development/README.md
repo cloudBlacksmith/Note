@@ -1,1 +1,1 @@
-就像我在[[README]]中说的
+就像我在[README](../README.md)中说的

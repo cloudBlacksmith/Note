@@ -21,7 +21,7 @@ socks协议设计之初的目的：就是为了让有权限的用户可以穿过
 
 别急先看下图:
 
-![[annex/TCP.gif]]
+![](annex/TCP.gif)
 
 我们之所以能够访问google是使用web通过http协议**应用层(第七层)**
 
