@@ -1,5 +1,5 @@
 ##### repo源配置
-``
+
 ```bash
 cat <<EOF | sudo tee /etc/yum.repos.d/kubernetes.repo
 [kubernetes]
