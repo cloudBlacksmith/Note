@@ -1,7 +1,7 @@
->[!NOTE] 简述
->允许WebServer向client推送数据更新;
->低延迟,实时通讯
->位于OSI7;
+### 简述:
+1. 允许WebServer向client推送数据更新;
+2. 低延迟,实时通讯
+3. 位于OSI7;
 
 ### 什么是WebSocket？
 
