@@ -54,3 +54,5 @@ find /var/www  -type f -name "*.php" -exec chmod 755 {} \;
 
 
 ##### 分布式
+
+更改 `fastcgi_pass   127.0.0.1:9000;` 的地址为php解析服务器地址即可

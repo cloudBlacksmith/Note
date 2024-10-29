@@ -1,7 +1,8 @@
 # 连接到postgresql for AWS RDS 时报错:FATAL: no pg_hba.conf entry for host 未配置允许远程连接
 
 **错误原因 :**
-未在`pg_hba.conf`中允许主机进行链接;
+
+未在 `pg_hba.conf` 中允许主机进行链接;
 
 因为在RDS实例中无法直接更改postgresql的配置文件,但AWS提供类参数组来进行配置的修改
 
