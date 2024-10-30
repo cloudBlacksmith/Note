@@ -151,7 +151,7 @@ java 的数据类型
  }
  ```
 
- ![](imgs\进制.png)
+ ![](imgs/进制.png)
 
  ```java
  package edu.shanxi;
