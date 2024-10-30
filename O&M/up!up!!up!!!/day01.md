@@ -34,8 +34,11 @@
 
  groq
 
+<<<<<<< HEAD
  ---
 
+=======
+>>>>>>> be2f14f (correct)
 java 的数据类型
 
  分类：
@@ -151,7 +154,11 @@ java 的数据类型
  }
  ```
 
+<<<<<<< HEAD
  ![](./imgs/进制.png)
+=======
+ ![](./imgs\进制.png)
+>>>>>>> be2f14f (correct)
 
  ```java
  package edu.shanxi;

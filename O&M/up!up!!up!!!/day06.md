@@ -35,7 +35,7 @@
 1.2、redis cluster 架构
 　　1)redis-cluster架构图
 
-![img](imgs\redis集群01.jpg)
+![img](./imgs\redis集群01.jpg)
 
 　　架构细节:
 　　(1)所有的redis节点彼此互联(PING-PONG机制),内部使用二进制协议优化传输速度和带宽.
@@ -45,7 +45,7 @@
 
    2) redis-cluster选举:容错
 
-![](imgs\redis集群02.jpg)
+![](./imgs\redis集群02.jpg)
 
 　　(1)领着选举过程是集群中所有master参与,如果半数以上master节点与master节点通信超过(cluster-node-timeout),认为当前master节点挂掉.
 　　(2):什么时候整个集群不可用(cluster_state:fail),当集群不可用时,所有对集群的操作做都不可用，收到((error) CLUSTERDOWN The cluster is down)错误

@@ -38,7 +38,7 @@
 
  单节点故障可以由服务器集群来解决
 
- ![](imgs\nginx.svg)
+ ![](./imgs\nginx.svg)
 
  问题：客户端到底要将请求发送给哪台服务器
 
@@ -50,11 +50,11 @@
 
  客户端发送的请求可以是动态申请资源的，也有申请静态资源，都是去tomcat中获取
 
- ![](imgs\nginx02.svg)
+ ![](./imgs\nginx02.svg)
 
  以上问题可以由nginx来解决
 
- ![](imgs\nginx03.svg)
+ ![](./imgs\nginx03.svg)
 
  在搭建集群后，使用nginx
 
