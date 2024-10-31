@@ -16,8 +16,20 @@ rabbitmq hard nofile 10240
 fs.filemax = 102400
 ```
 应用更改
-```shell
+```bash
 sysctl -p
 ```
 
+##### 配置文件级
 
+更改配置文件: `/usr/lib/systemd/system/rabbitmq-server.service`
+```conf
+在[Service]下添加一行参数如下：
+LimitNOFILE=10240
+```
+
+应用更改
+```bash
+systemctl daemon-reload
+systemctl restart rabbitmq-server
+```
