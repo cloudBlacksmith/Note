@@ -24,3 +24,25 @@ image_upload_use_internal_tenant = true
 ```
 
 重启服务生效:`openstack-service restart cinder glance`
+
+# 对接swift
+更改配置文件: `/etc/glance/glance-api.conf`
+检索条件: default_store
+```conf
+default_store = swift
+```
+检索条件: stores =
+```conf
+stores = file,http,swift
+```
+检索条件: swift_store_
+```conf
+swift_store_auth_address = http://<swift_service_ip>:5000/v1.0
+swift_store_container = glance
+swift_store_create_container_on_put = True
+swift_store_key = <swift_service_user>
+swift_store_user = <swift_service_user>
+swift_store_region = <swift_service_region>
+```
+
+重启服务生效:`openstack-service restart swift glance`
