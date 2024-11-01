@@ -7,7 +7,7 @@ master node
 ```conf
 bind 0.0.0.0 # 允许任何连接
 protected-mode no # 关闭保护模式
-port 7000 # 暴露端口
+port 6379 # 暴露端口
 daemonize yes
 cluster-enabled no # 不启用 集群
 appendonly yes # 不覆盖日志 会导致日志文件过大 部署成功后改为 no
@@ -19,7 +19,7 @@ slave node
 bind 0.0.0.0 # 允许任何连接
 daemonize yes
 protected-mode no # 关闭保护模式
-port 7000 # 暴露端口
+port 6379 # 暴露端口
 cluster-enabled no # 不启用 集群
 appendonly yes # 不覆盖日志 会导致日志文件过大 部署成功后改为 no
 replicaof 192.168.100.11 6379
