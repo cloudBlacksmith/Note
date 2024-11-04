@@ -31,7 +31,7 @@ masterauth 123456 # 客户端访问密码
 ```conf
 bind 0.0.0.0
 daemonize yes
-port 3000
-sentinel monitor mymaster 192.168.100.11 7000 2
+port 26379
+sentinel monitor mymaster 192.168.100.11 6379 2
 protected-mode no
 ```
