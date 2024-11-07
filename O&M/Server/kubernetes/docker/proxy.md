@@ -8,13 +8,11 @@ export https_proxy="http://your_proxy_address:port"
 编辑 /etc/environment：
 
 ```bash
-Copy code
 vim /etc/environment
 ```
 然后添加以下内容：
 
 ```bash
-Copy code
 http_proxy="http://your_proxy_address:port"
 https_proxy="http://your_proxy_address:port"
 ```
