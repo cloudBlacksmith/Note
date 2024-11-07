@@ -11,11 +11,11 @@ systemV
       2. 服务有依赖关系
       3. 多命令协同管理工作管理服务
 
-在sysV中，所有的**服务脚本都放在/etc/rc.d/init.d/**中，
+在sysV中，所有的 **服务脚本都放在/etc/rc.d/init.d/**中，
 
 ​可以使用/etc/rc.d/init.d/daemon [start|stop|restart|reload|status] 方式来管理服务，**默认的运行级别在/etc/inittab文件中定义**
 
->[!note] 当系统以某个运行级别启动时，会运行/etc/rc.d/rcN.d/（其中N范围为06）目录中所有的脚本，而这些脚本的命名都是Knnxxxxx或Snnxxxxx，
+当系统以某个运行级别启动时，会运行/etc/rc.d/rcN.d/（其中N范围为06）目录中所有的脚本，而这些脚本的命名都是Knnxxxxx或Snnxxxxx，
 ​S表示系统启动时调用，
 ​K表示系统终止时调用，
 ​nn是0099的数字，数字的大小决定了脚本运行的顺序，
@@ -24,7 +24,7 @@ xxxxx为脚本的名称（长度任意），
 
 在sysV中，服务被分成两大类，一类是可独立运行的服务，另一类是受xinetd管理的服务，而xinetd本身是一个独立运行的服务，用来负责管理一些不常用的服务，当这些服务需要被使用时，由xinetd来唤醒它们，当服务使用完后，这些服务会被结束以减少系统资源的占用。
 
->[!note] 在sysV中，定义了6个运行级别，分别是：
+在sysV中，定义了6个运行级别，分别是：
 runlevel0 = 关机
 runlevel1 = 单用户模式，仅root
 runlevel2 = 带网络的单用户模式
@@ -44,7 +44,7 @@ systemd
       3. 一个命令管理服务
       4. 向下兼容init服务脚本
 
->[!note] `systemctl command unit`
+ `systemctl command unit`
 command 主要有:
     start: 立刻启动后面接的 unit。
     stop:立刻关闭后面接的 unit。
@@ -68,7 +68,7 @@ command 主要有:
 systemclt set-default|get-default|isolate xxxxx.target 设置默认运行级别|获取当前的默认运行级别|不重启切换当前环境 
 （什么是环境呢，target类型的服务都为环境，当运行或切换（需要使用isolate而不能使用start）一个环境时往往会伴随着启动很多其他的服务用以支持这个环境，最常见的环境就是字符界面和图形界面，比如想从现在的字符界面临时切换到图形界面，使用systemctl isolate graphical.tatget）
 
-在systemd中，**运行级别由/etc/systemd/system/default.target**定义，这个文件本身是一个软连接，如果它指向graphical.targer那么默认的运行级别就是图形界面。
+在systemd中，**运行级别由/etc/systemd/system/default.target** 定义，这个文件本身是一个软连接，如果它指向graphical.targer那么默认的运行级别就是图形界面。
 
  在systemd中，为了向下兼容也提供了一些target来映射sysV中的运行级别
 
