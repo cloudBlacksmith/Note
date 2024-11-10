@@ -37,3 +37,11 @@ max_pool_size=10
 # Deprecated group;name - [DATABASE]/sqlalchemy_max_overflow
 max_overflow=10
 ```
+
+##### 因等待时间过长而导致虚拟机启动超时从而获取不到 IP 地址而报错失败
+检索条件: `g_is_`
+```conf
+# Determine if instance should boot or fail on VIF plugging timeout. For more
+# information, refer to the documentation. (boolean value)
+vif_plugging_is_fatal=false
+```
