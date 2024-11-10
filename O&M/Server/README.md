@@ -1,5 +1,4 @@
 ## list
-ceph
 cicd
 containerd
 elk
