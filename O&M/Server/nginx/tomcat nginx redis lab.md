@@ -5,7 +5,7 @@
 
 [tomcat篇](/O&M/Server/tomcat/tomcat%20nginx%20redis%20lab.md)
 
-添加配置文件，
+添加配置文件
 
 ```conf
 
