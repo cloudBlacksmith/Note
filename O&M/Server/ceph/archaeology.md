@@ -47,7 +47,7 @@ ceph-deploy new ceph1
 #### 安装cdph 二进制软件包
 
 ```bash
-ceph-deploy install ceph-node1 ceph-node2 ceph-node3 ## 如果你使用的是本地源 添加--no-adjust-repos 参数
+ceph-deploy install ceph1 ceph2 ceph3 ## 如果你使用的是本地源 添加--no-adjust-repos 参数
 ```
 
 分别在三个节点上运行 `ceph -v` 验证安装是否完毕
