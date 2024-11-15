@@ -8,3 +8,93 @@ yum makecache &&  重新生成 yum 的本地缓存，这样可以确保 yum 使�
 yum remove -y vim &&   卸载 vim 包。这个步骤可能是为了完全清除 vim 的当前安装，避免任何损坏的配置或文件影响。
 yum install -y vim  重新安装 vim。这将确保 vim 被正确安装并包含所有必需的依赖项。
   
+E325: ATTENTION
+Found a swap file by the name ".node_init.sh.swp"
+          owned by: root   dated: Fri Nov 15 20:40:34 2024
+         file name: /opt/Monitor/node_init.sh
+          modified: YES
+         user name: root   host name: k8s-master-node1
+        process ID: 80114
+While opening file "node_init.sh"
+
+(1) Another program may be editing the same file.  If this is the case,
+    be careful not to end up with two different instances of the same
+    file when making changes.  Quit, or continue with caution.
+(2) An edit session for this file crashed.
+    If this is the case, use ":recover" or "vim -r node_init.sh"
+    to recover the changes (see ":help recovery").
+    If you did this already, delete the swap file ".node_init.sh.swp"
+    to avoid this message.
+
+Swap file ".node_init.sh.swp" already exists!
+[O]pen Read-Only, (E)dit anyway, (R)ecover, (D)elete it, (Q)uit, (A)bort:
+解决方式
+当使用vim出现这个时，说明 vim 发现了一个与你试图编辑的文件相关的交换文件（.swp 文件）。这通常意味着文件正在被另一个 vim 实例编辑，或者之前的编辑会话异常终止，留下了交换文件。
+
+当你打开文件时，vim 会提示你选择一个操作：
+Open Read-Only：以只读方式打开文件。
+Edit anyway：强制编辑文件，忽略交换文件。
+Recover：恢复文件。
+Delete it：删除交换文件。
+Quit：退出 vim。
+Abort：中止打开文件的操作。
+
+这里我选择了输入D
+
+然后可能还会出现
+
+E325: ATTENTION
+Found a swap file by the name ".node_init.sh.swp"
+          owned by: root   dated: Fri Nov 15 20:40:34 2024
+         file name: /opt/Monitor/node_init.sh
+          modified: YES
+         user name: root   host name: k8s-master-node1
+        process ID: 80114
+While opening file "node_init.sh"
+
+(1) Another program may be editing the same file.  If this is the case,
+    be careful not to end up with two different instances of the same
+    file when making changes.  Quit, or continue with caution.
+(2) An edit session for this file crashed.
+    If this is the case, use ":recover" or "vim -r node_init.sh"
+    to recover the changes (see ":help recovery").
+    If you did this already, delete the swap file ".node_init.sh.swp"
+    to avoid this message.
+
+Swap file ".node_init.sh.swp" already exists!
+
+"node_init.sh" [New File]
+Press ENTER or type command to continue
+
+E325: ATTENTION
+Found a swap file by the name ".node_init.sh.swp"
+          owned by: root   dated: Fri Nov 15 20:40:34 2024
+         file name: /opt/Monitor/node_init.sh
+          modified: YES
+         user name: root   host name: k8s-master-node1
+        process ID: 80114
+While opening file "node_init.sh"
+
+(1) Another program may be editing the same file.  If this is the case,
+    be careful not to end up with two different instances of the same
+    file when making changes.  Quit, or continue with caution.
+(2) An edit session for this file crashed.
+    If this is the case, use ":recover" or "vim -r node_init.sh"
+    to recover the changes (see ":help recovery").
+    If you did this already, delete the swap file ".node_init.sh.swp"
+    to avoid this message.
+
+Swap file ".node_init.sh.swp" already exists!
+
+"node_init.sh" [New File]
+Press ENTER or type command to continue
+解决方式
+ls -a 查看隐形文件，然后找到*.sw*的文件
+删除它
+在 vim 中设置终端类型：
+Vim
+:set term=xterm
+echo 'set nocompatible' &gt; ~/.vimrc
+echo 'syntax on' &gt;&gt; ~/.vimrc
+
+重新生成环境变量
