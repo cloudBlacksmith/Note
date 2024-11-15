@@ -20,8 +20,14 @@ yum install php nginx mysql-server  php-mysqli php-gd  -y
 
 ##### php
 
-在/etc/php-fpm.d/www.conf 中修改参数 `listen = /run/php-fpm/www.sock`
+更改监听地址
+
+在/path/to/www.conf 中修改参数 `listen = /run/php-fpm/www.sock`
 为 `listen = 127.0.0.1:9000`
+
+更改时区
+
+在/path/to/php.ini 中修改参数 `date.timezone = "Asia/Shanghai"`
 
 ##### nginx
 
