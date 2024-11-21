@@ -52,12 +52,26 @@ vif_plugging_is_fatal=false
 
 检索条件：`ver=f`
 
-```bash
+```conf
 # The class of the driver used by the scheduler. This should be chosen from one
 # of the entrypoints under the namespace 'nova.scheduler.driver' of file
 # 'setup.cfg'. If nothing is specified in this option, the 'filter_scheduler' is
 # used. For more information, refer to the documentation. (string value)
 # Deprecated group;name - DEFAULT;scheduler_driver
 driver=caching_scheduler
+```
+
+##### 可调整实例大小
+
+检索条件: `me_host`
+
+```conf
+# Allow destination machine to match source for resize. Useful when
+# testing in single-host environments. By default it is not allowed
+# to resize to the same host. Setting this option to true will add
+# the same host to the destination options. Also set to true
+# if you allow the ServerGroupAffinityFilter and need to resize.
+#  (boolean value)
+allow_resize_to_same_host=true
 ```
 
