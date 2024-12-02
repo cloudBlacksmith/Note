@@ -35,12 +35,12 @@ default_store = swift
 ```conf
 stores = file,http,swift
 ```
-检索条件: swift_store_
+检索条件: `^#swift_store_`
 ```conf
 swift_store_auth_address = http://<swift_service_ip>:5000/v1.0
 swift_store_container = glance
 swift_store_create_container_on_put = True
-swift_store_key = <swift_service_user>
+swift_store_key = <swift_service_pass>
 swift_store_user = <swift_service_user>
 swift_store_region = <swift_service_region>
 ```
