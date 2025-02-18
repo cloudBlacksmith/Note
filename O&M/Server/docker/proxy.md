@@ -29,3 +29,14 @@ Environment="HTTP_PROXY=http://your_proxy_address:port"
 Environment="HTTPS_PROXY=http://your_proxy_address:port"
 Environment="NO_PROXY=localhost,127.0.0.1"
 ```
+
+### 重载服务
+
+```bash
+sudo systemctl daemon-reload 
+
+sudo systemctl restart docker
+```
+
+
+
